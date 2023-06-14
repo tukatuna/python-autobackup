@@ -1,0 +1,13 @@
+In this code, the backup_files function takes two parameters: source_dir and destination_dir. source_dir represents the directory that you want to back up, and destination_dir is the directory where the backup will be stored.
+
+The function creates a timestamp using the current date and time, and then creates a backup folder with a unique name based on the timestamp. It uses os.makedirs to create the backup folder if it doesn't already exist.
+
+The code then uses os.walk to traverse the source directory and its subdirectories, and for each file, it creates the corresponding destination path by replacing the source directory path with the backup folder path. It also creates any necessary subdirectories in the destination folder using os.makedirs.
+
+Finally, it uses shutil.copy2 to copy each file from the source path to the destination path, preserving file metadata such as timestamps.
+
+You can replace /path/to/source with the actual path to the directory you want to back up and /path/to/destination with the path to the directory where you want to store the backup.
+
+Please ensure that the destination directory is writable and has sufficient storage space to accommodate the backup.
+
+Note: This code performs a basic backup by copying files from the source directory to the backup folder. It does not handle incremental backups or other advanced backup strategies. Depending on your specific requirements, you may need to modify the code accordingly.
